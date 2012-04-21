@@ -201,7 +201,7 @@
 	[[vPoints objectAtIndex:numPoints-1] setPos:pointB.x y:pointB.y];
 	
 	//update points, apply gravity
-	for(int i=1;i<numPoints-2;i++) { // numPoints-1
+	for(int i=1;i<numPoints-1;i++) {
 		[[vPoints objectAtIndex:i] applyGravity:dt];
 		[[vPoints objectAtIndex:i] update];
 	}
@@ -221,7 +221,7 @@
 	[[vPoints objectAtIndex:numPoints-1] setPos:pointB.x y:pointB.y];
 	
 	//update points, apply pre-integrated gravity
-	for(int i=1;i<numPoints-2;i++) { // numPoints-1
+	for(int i=1;i<numPoints-1;i++) {
 		[[vPoints objectAtIndex:i] applyGravityxdt:gxdt gydt:gydt];
 		[[vPoints objectAtIndex:i] update];
 	}
