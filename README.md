@@ -29,7 +29,7 @@ Refer to VRope.h for more information and usage examples, including the original
     // create joint between bodyA and bodyB
     b2RopeJoint* bodyAbodyBJoint = (b2RopeJoint*)b2World->CreateJoint(&bodyAbodyBJointDef);
     
-    // create batchnode, create vrope
+    // create batchnode and vrope for joint
     CCSpriteBatchNode *ropeSegmentBatchNode = [CCSpriteBatchNode batchNodeWithFile:@"ropesegment.png"];
     [self addChild:ropeSegmentBatchNode];
     VRope *verletRope = [[VRope alloc] init:bodyAbodyBJoint batchNode:ropeSegmentBatchNode];
@@ -41,18 +41,18 @@ Refer to VRope.h for more information and usage examples, including the original
 
     // update vrope (like original VRope, without any changing gravity)
     [verletRope update:dt];
-    [verletRope updateSprites]; // doesn't need to be in draw loop (could be called internally)
+    [verletRope updateSprites]; // nb. doesn't need to be in draw loop (could be called internally)
  
     // update vrope (using global gravity, nb. will affect all ropes!)
     CGPoint newGravity = ccp(0.7f,0.7f); // update gravity to something else (based on your simulation, interactivity)
     [VPoint setGravityX:newGravity.x Y:newGravity.y];
     [verletRope update:dt];
-    [verletRope updateSprites]; // doesn't need to be in draw loop (could be called internally)
+    [verletRope updateSprites]; // nb. doesn't need to be in draw loop (could be called internally)
  
     // update vrope (example using gravity for specific ropes or points, the gravity component is preintegrated before being applied to points)
     CGPoint newGravity = ccp(0.7f,0.7f); // update gravity to something else (based on your simulation, interactivity)
     [verletRope updateWithPreIntegratedGravity:dt gravityX:newGravity gravityY:newGravity]; // update gravity for each rope (based on your simulation, interactivity)
-    [verletRope updateSprites]; // doesn't need to be in draw loop (could be called internally)
+    [verletRope updateSprites]; // nb. doesn't need to be in draw loop (could be called internally)
 
 
 nb. the example `[verletRope updateWithPreIntegratedOriginGravity:dt]` has gravity origin at (0,0) and uses
