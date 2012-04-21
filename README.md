@@ -9,13 +9,14 @@ Update of VRope 0.3 for cocos2d 0.99.x by [patrickC](http://cleverhamstergames.c
 
 ### Modifications:
 
-- added retina fix (works on iPhone 4+ and iPad 3)
+- added retina fix (tested on iPhone 4s and iPad 3)
 - added global gravity for points, making it easy to update gravity for the entire rope system
-- added individual gravity for points, making it easy to update gravity for each specific point
+- added individual gravity support for points, making it easy to update gravity for each specific point
 - added support to init/attach rope to a joint, rather than two bodies, allowing the rope to join away from body origins
 
 ### TODO:
-- add nicer gravity variable to each rope, rather than using a global gravity hack in VPoint
+- add nicer gravity variables to ropes and points, rather than using a global gravity hack in VPoint
+- remove references to older/deprecated cocos2d classes/methods, pre-cocos 1.x
 - test and fix stuff for cocos2d v2.x
 
 Usage
@@ -51,7 +52,7 @@ Refer to VRope.h for more information and usage examples, including the original
     [verletRope updateSprites]; // doesn't need to be in draw loop (could be called internally)
 
 
-nb. the example [verletRope updateWithPreIntegratedOriginGravity:dt] has gravity origin at (0,0) and uses
+nb. the example `[verletRope updateWithPreIntegratedOriginGravity:dt]` has gravity origin at (0,0) and uses
   an average of bodyA and bodyB positions to determine which way is 'down' for each rope.
   This was used in Flightless's game [Bee Leader](http://www.flightless.co.nz/beeleader).
   Obviously, you can change this method or add others to suit your own simulation.
