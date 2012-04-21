@@ -1,9 +1,9 @@
 VRope
 =====
 
-VRope 0.4 for Cocos2d.
+VRope 0.4 for Cocos2d, by [Flightless](http://www.flightless.co.nz).
 
-Based on VRope 0.3 by patrickC [www.cocos2d-iphone.org/archives/1112](http://www.cocos2d-iphone.org/archives/1112).
+Update of VRope 0.3 by [patrickC](http://cleverhamstergames.com) [www.cocos2d-iphone.org/archives/1112](http://www.cocos2d-iphone.org/archives/1112).
 
 ### Modifications
 
@@ -15,8 +15,10 @@ Based on VRope 0.3 by patrickC [www.cocos2d-iphone.org/archives/1112](http://www
 ### TODO
 - add nicer gravity variable to each rope, rather than use global gravity in VPoint
 
-USAGE
+Usage
 -----
+
+Refer to VRope.h for more information and usage examples, including the original VRope 0.3 usage.
 
 ### Create
 
@@ -50,3 +52,19 @@ nb. the example [verletRope updateWithPreIntegratedOriginGravity:dt] has gravity
   an average of bodyA and bodyB positions to determine which way is 'down' for each rope.
   This was used for Flightless's game Bee Leader - http://www.flightless.co.nz/beeleader 
   Obviously, you can change this method or add others to suit your own simulation.
+
+License
+-------
+
+The original VRope 0.3 contained no licensing. VRope 0.4 uses the MIT License. We reserve the right to change this license based on any requests from the original author [patrickC](http://cleverhamstergames.com).
+
+MIT License.
+
+Copyright (c) 2012 Flightless Ltd.
+Copyright (c) 2010 Clever Hamster Games
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
