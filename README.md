@@ -1,20 +1,22 @@
 VRope
 =====
 
-VRope 0.4 for Cocos2d, by [Flightless](http://www.flightless.co.nz). Used in the game [Bee Leader](http://www.flightless.co.nz/beeleader) for iOS (iPhone/iPad/iPod Touch), released in April 2012.
+A simple rope system for [cocos2d](http://www.cocos2d-iphone.org) using [Verlet Integration](http://en.wikipedia.org/wiki/Verlet_integration), based on examples by [YoAmbulante.com](http://www.yoambulante.com/en/labs/verlet.php).
 
-Update of VRope 0.3 by [patrickC](http://cleverhamstergames.com) [www.cocos2d-iphone.org/archives/1112](http://www.cocos2d-iphone.org/archives/1112).
+VRope 0.4 for cocos2d 1.x by [Flightless](http://www.flightless.co.nz). Used in the game [Bee Leader](http://www.flightless.co.nz/beeleader) for iOS (iPhone/iPad/iPod Touch), released in April 2012.
+
+Update of VRope 0.3 for cocos2d 0.99.x by [patrickC](http://cleverhamstergames.com), posted on the cocos site at [www.cocos2d-iphone.org/archives/1112](http://www.cocos2d-iphone.org/archives/1112).
 
 ### Modifications
 
-- added retina fix
+- added retina fix (works on iPhone 4+ and iPad 3)
 - added global gravity for points, making it easy to update gravity for the entire rope system
 - added individual gravity for points, making it easy to update gravity for each specific point
 - added support to init/attach rope to a joint, rather than two bodies, allowing the rope to join away from body origins
 
 ### TODO
-- add nicer gravity variable to each rope, rather than use global gravity in VPoint
-
+- add nicer gravity variable to each rope, rather than using a global gravity hack in VPoint
+- test and fix stuff for cocos2d v2.x
 
 Usage
 -----
@@ -51,7 +53,7 @@ Refer to VRope.h for more information and usage examples, including the original
 
 nb. the example [verletRope updateWithPreIntegratedOriginGravity:dt] has gravity origin at (0,0) and uses
   an average of bodyA and bodyB positions to determine which way is 'down' for each rope.
-  This was used for Flightless's game [Bee Leader](http://www.flightless.co.nz/beeleader).
+  This was used in Flightless's game [Bee Leader](http://www.flightless.co.nz/beeleader).
   Obviously, you can change this method or add others to suit your own simulation.
 
 
