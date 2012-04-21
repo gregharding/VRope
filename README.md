@@ -34,6 +34,9 @@ Refer to VRope.h for more information and usage examples, including the original
     [self addChild:ropeSegmentBatchNode];
     VRope *verletRope = [[VRope alloc] init:bodyAbodyBJoint batchNode:ropeSegmentBatchNode];
  
+    // or, create vrope between bodies
+    VRope *verletRope = [[VRope alloc] init:body1 body2:body2 batchNode:ropeSegmentBatchNode];
+ 
 ### Updating
 
     // update vrope (like original VRope, without any changing gravity)
