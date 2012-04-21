@@ -20,13 +20,15 @@ USAGE
 -----
 
 *CREATE*
-> // create joint between bodyA and bodyB
-> b2RopeJoint* bodyAbodyBJoint = (b2RopeJoint*)b2World->CreateJoint(&bodyAbodyBJointDef);
->
-> // create batchnode, create vrope
-> CCSpriteBatchNode *ropeSegmentBatchNode = [CCSpriteBatchNode batchNodeWithFile:@"ropesegment.png" ];
-> [self addChild:ropeSegmentBatchNode];
-> VRope *verletRope = [[VRope alloc] init:bodyAbodyBJoint batchNode:ropeSegmentBatchNode];
+`
+// create joint between bodyA and bodyB
+b2RopeJoint* bodyAbodyBJoint = (b2RopeJoint*)b2World->CreateJoint(&bodyAbodyBJointDef);
+
+// create batchnode, create vrope
+CCSpriteBatchNode *ropeSegmentBatchNode = [CCSpriteBatchNode batchNodeWithFile:@"ropesegment.png" ];
+[self addChild:ropeSegmentBatchNode];
+VRope *verletRope = [[VRope alloc] init:bodyAbodyBJoint batchNode:ropeSegmentBatchNode];
+`
  
 *UPDATING*
 > // update vrope (like original VRope, without any changing gravity)
