@@ -1,7 +1,7 @@
 VRope
 =====
 
-VRope 0.4 for Cocos2d, by [Flightless](http://www.flightless.co.nz).
+VRope 0.4 for Cocos2d, by [Flightless](http://www.flightless.co.nz). Used in the game [Bee Leader](http://www.flightless.co.nz/beeleader) for iOS (iPhone/iPad/iPod Touch), released in April 2012.
 
 Update of VRope 0.3 by [patrickC](http://cleverhamstergames.com) [www.cocos2d-iphone.org/archives/1112](http://www.cocos2d-iphone.org/archives/1112).
 
@@ -14,6 +14,7 @@ Update of VRope 0.3 by [patrickC](http://cleverhamstergames.com) [www.cocos2d-ip
 
 ### TODO
 - add nicer gravity variable to each rope, rather than use global gravity in VPoint
+
 
 Usage
 -----
@@ -50,8 +51,9 @@ Refer to VRope.h for more information and usage examples, including the original
 
 nb. the example [verletRope updateWithPreIntegratedOriginGravity:dt] has gravity origin at (0,0) and uses
   an average of bodyA and bodyB positions to determine which way is 'down' for each rope.
-  This was used for Flightless's game Bee Leader - http://www.flightless.co.nz/beeleader 
+  This was used for Flightless's game [Bee Leader](http://www.flightless.co.nz/beeleader).
   Obviously, you can change this method or add others to suit your own simulation.
+
 
 License
 -------
@@ -61,7 +63,8 @@ The original VRope 0.3 contained no licensing. VRope 0.4 uses the MIT License. W
 MIT License.
 
 Copyright (c) 2012 Flightless Ltd.
-Copyright (c) 2010 Clever Hamster Games
+
+Copyright (c) 2010 Clever Hamster Games.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
