@@ -1,5 +1,5 @@
-VRope
-=====
+VRope 0.4
+=========
 
 A simple rope system for [cocos2d](http://www.cocos2d-iphone.org) using [Verlet Integration](http://en.wikipedia.org/wiki/Verlet_integration), based on examples by [YoAmbulante.com](http://www.yoambulante.com/en/labs/verlet.php).
 
@@ -7,14 +7,14 @@ VRope 0.4 for cocos2d 1.x by [Flightless](http://www.flightless.co.nz). Used in 
 
 Update of VRope 0.3 for cocos2d 0.99.x by [patrickC](http://cleverhamstergames.com), posted on the cocos site at [www.cocos2d-iphone.org/archives/1112](http://www.cocos2d-iphone.org/archives/1112).
 
-### Modifications
+### Modifications:
 
 - added retina fix (works on iPhone 4+ and iPad 3)
 - added global gravity for points, making it easy to update gravity for the entire rope system
 - added individual gravity for points, making it easy to update gravity for each specific point
 - added support to init/attach rope to a joint, rather than two bodies, allowing the rope to join away from body origins
 
-### TODO
+### TODO:
 - add nicer gravity variable to each rope, rather than using a global gravity hack in VPoint
 - test and fix stuff for cocos2d v2.x
 
