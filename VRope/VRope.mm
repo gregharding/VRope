@@ -276,6 +276,7 @@
 }
 
 -(void)dealloc {
+    /*
 	for(int i=0;i<numPoints;i++) {
 		[[vPoints objectAtIndex:i] release];
 		if(i!=numPoints-1)
@@ -283,6 +284,7 @@
 	}
 	[vPoints removeAllObjects];
 	[vSticks removeAllObjects];
+    */
 	[vPoints release];
 	[vSticks release];
 	[super dealloc];
