@@ -5,17 +5,16 @@ VRope 0.4 for Cocos2d.
 
 Based on VRope 0.3 by patrickC (www.cocos2d-iphone.org/archives/1112).
 
-Modifications:
-
+*Modifications*
 - added retina fix
 - added global gravity for points, making it easy to update gravity for the entire rope system
 - added individual gravity for points, making it easy to update gravity for each specific point
 - added support to init/attach rope to a joint, rather than two bodies, allowing the rope to join away from body origins
 
-todo: add nicer gravity variable to each rope, rather than use global gravity in VPoint
+*TODO*
+- add nicer gravity variable to each rope, rather than use global gravity in VPoint
 
-CREATE:
-
+*CREATE*
 // create joint
 b2RopeJoint* bodyAbodyBJoint = (b2RopeJoint*)b2World->CreateJoint(&bodyAbodyBJointDef); // create joint between bodyA and bodyB
  
@@ -24,8 +23,7 @@ CCSpriteBatchNode *ropeSegmentBatchNode = [CCSpriteBatchNode batchNodeWithFile:@
 [self addChild:ropeSegmentBatchNode]; // add batchnode to cocos2d layer
 VRope *verletRope = [[VRope alloc] init:bodyAbodyBJoint batchNode:ropeSegmentBatchNode];
  
-UPDATING:
-
+*UPDATING*
 // update vrope (like original VRope, without any changing gravity)
 [verletRope update:dt];
 [verletRope updateSprites]; // doesn't need to be in draw loop (could be called internally)
