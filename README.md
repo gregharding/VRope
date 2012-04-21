@@ -15,6 +15,7 @@ Modifications:
 todo: add nicer gravity variable to each rope, rather than use global gravity in VPoint
 
 CREATE:
+
 // create joint
 b2RopeJoint* bodyAbodyBJoint = (b2RopeJoint*)b2World->CreateJoint(&bodyAbodyBJointDef); // create joint between bodyA and bodyB
  
@@ -24,6 +25,7 @@ CCSpriteBatchNode *ropeSegmentBatchNode = [CCSpriteBatchNode batchNodeWithFile:@
 VRope *verletRope = [[VRope alloc] init:bodyAbodyBJoint batchNode:ropeSegmentBatchNode];
  
 UPDATING:
+
 // update vrope (like original VRope, without any changing gravity)
 [verletRope update:dt];
 [verletRope updateSprites]; // doesn't need to be in draw loop (could be called internally)
