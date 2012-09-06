@@ -165,7 +165,14 @@
 			VPoint *point2 = [[vSticks objectAtIndex:i] getPointB];
 			CGPoint stickVector = ccpSub(ccp(point1.x,point1.y),ccp(point2.x,point2.y));
 			float stickAngle = ccpToAngle(stickVector);
-			CCSprite *tmpSprite = [CCSprite spriteWithBatchNode:spriteSheet rect:CGRectMake(0,0,multiplier,[[[spriteSheet textureAtlas] texture] pixelsHigh]/CC_CONTENT_SCALE_FACTOR())]; // Flightless, retina fix
+            
+            // cocos 1.x
+            //CCSprite *tmpSprite = [CCSprite spriteWithBatchNode:spriteSheet rect:CGRectMake(0,0,multiplier,[[[spriteSheet textureAtlas] texture] pixelsHigh]/CC_CONTENT_SCALE_FACTOR())]; // Flightless, retina fix
+            
+            // cocos 2.x
+            CCSprite* tmpSprite = [CCSprite spriteWithTexture:spriteSheet.texture rect:CGRectMake(0,0,multiplier,[[[spriteSheet textureAtlas] texture] pixelsHigh]/CC_CONTENT_SCALE_FACTOR())]; // Flightless, retina fix
+            tmpSprite.batchNode = spriteSheet;
+            
 			ccTexParams params = {GL_LINEAR,GL_LINEAR,GL_REPEAT,GL_REPEAT};
 			[tmpSprite.texture setTexParameters:&params];
 			[tmpSprite setPosition:ccpMidpoint(ccp(point1.x,point1.y),ccp(point2.x,point2.y))];
@@ -253,6 +260,7 @@
 	}	
 }
 
+/* opengl es 1.1 only
 -(void)debugDraw {
 	//Depending on scenario, you might need to have different Disable/Enable of Client States
 	//glDisableClientState(GL_TEXTURE_2D);
@@ -276,6 +284,7 @@
 	//glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	//glEnableClientState(GL_COLOR_ARRAY);
 }
+*/
 
 -(void)dealloc {
     /*

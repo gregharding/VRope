@@ -14,7 +14,7 @@
 */
 
 //
-//  VRope.h - 0.4
+//  VRope.h - 0.5
 //
 //  Modified by Flightless www.flightless.co.nz 20/4/2012
 //  Used in Flightless's game Bee Leader - http://www.flightless.co.nz/beeleader 
@@ -24,11 +24,11 @@
 //  added global gravity for points, making it easy to update gravity for the entire rope system
 //  added individual gravity support for points, making it easy to update gravity for each specific point
 //  added support to init/attach rope to a joint, rather than two bodies, allowing the rope to join away from body origins
+//  supports cocos2d 2.0
 //
 //  TODO:
 //  add nicer gravity variables to ropes and points, rather than using a global gravity hack in VPoint
 //  remove references to older/deprecated cocos2d classes/methods, pre-cocos 1.x
-//  test and fix stuff for cocos2d v2.x
 
 /*
 
@@ -179,7 +179,7 @@ Good luck :)
 -(void)resetWithPoints:(CGPoint)pointA pointB:(CGPoint)pointB;
 -(void)updateWithPoints:(CGPoint)pointA pointB:(CGPoint)pointB dt:(float)dt;
 -(void)updateWithPoints:(CGPoint)pointA pointB:(CGPoint)pointB gxdt:(float)gxdt gydt:(float)gydt; // Flightless, update with support for pre-integrating the gravity each step (optimised for changing gravity)
--(void)debugDraw;
+//-(void)debugDraw; // opengl es 1.1 only
 -(void)updateSprites;
 -(void)removeSprites;
 
