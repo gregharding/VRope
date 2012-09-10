@@ -152,12 +152,10 @@
 		VPoint *tmpPoint = [[VPoint alloc] init];
 		[tmpPoint setPos:tmpVector.x y:tmpVector.y];
 		[vPoints addObject:tmpPoint];
-        [tmpPoint release];
 	}
 	for(int i=0;i<numPoints-1;i++) {
 		VStick *tmpStick = [[VStick alloc] initWith:[vPoints objectAtIndex:i] pointb:[vPoints objectAtIndex:i+1]];
 		[vSticks addObject:tmpStick];
-        [tmpStick release];
 	}
 	if(spriteSheet!=nil) {
 		for(int i=0;i<numPoints-1;i++) {
@@ -201,7 +199,6 @@
 		[spriteSheet removeChild:tmpSprite cleanup:YES];
 	}
 	[ropeSprites removeAllObjects];
-	[ropeSprites release];
 }
 
 -(void)updateWithPoints:(CGPoint)pointA pointB:(CGPoint)pointB dt:(float)dt {
@@ -286,23 +283,5 @@
 }
 */
 
--(void)dealloc {
-    /*
-	for(int i=0;i<numPoints;i++) {
-		[[vPoints objectAtIndex:i] release];
-		if(i!=numPoints-1)
-			[[vSticks objectAtIndex:i] release];
-	}
-	[vPoints removeAllObjects];
-	[vSticks removeAllObjects];
-    */
-    
-    //[self removeSprites];
-    [ropeSprites release];
-    
-	[vPoints release];
-	[vSticks release];
-	[super dealloc];
-}
 
 @end
