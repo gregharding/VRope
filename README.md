@@ -3,7 +3,7 @@ VRope 0.5
 
 A simple rope system for [cocos2d](http://www.cocos2d-iphone.org) using [Verlet Integration](http://en.wikipedia.org/wiki/Verlet_integration), based on examples by [YoAmbulante.com](http://www.yoambulante.com/en/labs/verlet.php).
 
-VRope 0.5 for cocos2d 2.0 by [Flightless](http://www.flightless.co.nz). Used in the games [Bee Leader](http://www.flightless.co.nz/beeleader) (released in May 2012) and [Bee Leader Free](http://www.flightless.co.nz/beeleader) (released in August 2012) for iOS (iPhone/iPad/iPod Touch).
+VRope 0.5 for cocos2d 2.0 by [Flightless](http://www.flightless.co.nz). Used in the games [Bee Leader](http://www.flightless.co.nz/beeleader) (iOS release May 2012, Mac release April 2013) and [Bee Leader Free](http://www.flightless.co.nz/beeleader) (iOS release August 2012, Mac release April 2013) for Mac and iOS (iPhone/iPad/iPod Touch).
 
 Update of VRope 0.3 for cocos2d 0.99.x by [patrickC](http://cleverhamstergames.com), posted on the cocos site at [www.cocos2d-iphone.org/archives/1112](http://www.cocos2d-iphone.org/archives/1112).
 
