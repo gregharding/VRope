@@ -5,7 +5,7 @@ A simple rope system for [cocos2d](http://www.cocos2d-iphone.org) using [Verlet 
 
 VRope 0.5 for cocos2d 2.0 by [Flightless](http://www.flightless.co.nz). Used in the games [Bee Leader](http://www.flightless.co.nz/beeleader) (iOS release May 2012, Mac release April 2013) and [Bee Leader Free](http://www.flightless.co.nz/beeleader) (iOS release August 2012, Mac release April 2013) for Mac and iOS (iPhone/iPad/iPod Touch).
 
-Update of VRope 0.3 for cocos2d 0.99.x by [patrickC](http://cleverhamstergames.com), posted on the cocos site at [www.cocos2d-iphone.org/archives/1112](http://www.cocos2d-iphone.org/archives/1112).
+Update of VRope 0.3 for cocos2d 0.99.x by [Patrick Corrieri](http://drycactus.com), posted on the cocos site at [www.cocos2d-iphone.org/archives/1112](http://www.cocos2d-iphone.org/archives/1112).
 
 ### Modifications:
 
@@ -64,7 +64,7 @@ nb. the example `[verletRope updateWithPreIntegratedOriginGravity:dt]` has gravi
 License
 -------
 
-The original VRope 0.3 contained no licensing. This version of VRope uses the MIT License. We reserve the right to change this license based on any requests from the original author [patrickC](http://cleverhamstergames.com).
+The original VRope 0.3 contained no licensing. This version of VRope uses the MIT License. We reserve the right to change this license based on any requests from the original author [Patrick Corrieri](http://drycactus.com).
 
 MIT License.
 
