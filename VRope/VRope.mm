@@ -2,7 +2,7 @@
  
  MIT License.
  
- Copyright (c) 2012 Flightless Ltd.  
+ Copyright (c) 2012 Flightless Ltd.
  Copyright (c) 2010 Clever Hamster Games.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -11,7 +11,7 @@
  
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  
-*/
+ */
 
 //
 //  VRope.m
@@ -102,7 +102,7 @@
     
     // pre-integrate current gravity
     CGPoint gravity = ccpMult([VPoint getGravity], dt);
-        
+    
     // update points with pre-integrated gravity
 	[self updateWithPoints:pointA pointB:pointB gxdt:gravity.x gydt:gravity.y];
 }
@@ -152,12 +152,17 @@
 		VPoint *tmpPoint = [[VPoint alloc] init];
 		[tmpPoint setPos:tmpVector.x y:tmpVector.y];
 		[vPoints addObject:tmpPoint];
+        
+#if !__has_feature(objc_arc)
         [tmpPoint release];
+#endif
 	}
 	for(int i=0;i<numPoints-1;i++) {
 		VStick *tmpStick = [[VStick alloc] initWith:[vPoints objectAtIndex:i] pointb:[vPoints objectAtIndex:i+1]];
 		[vSticks addObject:tmpStick];
+#if !__has_feature(objc_arc)
         [tmpStick release];
+#endif
 	}
 	if(spriteSheet!=nil) {
 		for(int i=0;i<numPoints-1;i++) {
@@ -201,7 +206,9 @@
 		[spriteSheet removeChild:tmpSprite cleanup:YES];
 	}
 	[ropeSprites removeAllObjects];
-	[ropeSprites release];
+#if !__has_feature(objc_arc)
+    [ropeSprites release];
+#endif
 }
 
 -(void)updateWithPoints:(CGPoint)pointA pointB:(CGPoint)pointB dt:(float)dt {
@@ -257,52 +264,54 @@
 			[tmpSprite setPosition:ccpMidpoint(point1_,point2_)];
 			[tmpSprite setRotation: -CC_RADIANS_TO_DEGREES(stickAngle)];
 		}
-	}	
+	}
 }
 
 /* opengl es 1.1 only
--(void)debugDraw {
-	//Depending on scenario, you might need to have different Disable/Enable of Client States
-	//glDisableClientState(GL_TEXTURE_2D);
-	//glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-	//glDisableClientState(GL_COLOR_ARRAY);
-	//set color and line width for ccDrawLine
-	glColor4f(0.0f,0.0f,1.0f,1.0f);
-	glLineWidth(5.0f);
-	for(int i=0;i<numPoints-1;i++) {
-		//"debug" draw
-		VPoint *pointA = [[vSticks objectAtIndex:i] getPointA];
-		VPoint *pointB = [[vSticks objectAtIndex:i] getPointB];
-		ccDrawPoint(ccp(pointA.x,pointA.y));
-		ccDrawPoint(ccp(pointB.x,pointB.y));
-		//ccDrawLine(ccp(pointA.x,pointA.y),ccp(pointB.x,pointB.y));
-	}
-	//restore to white and default thickness
-	glColor4f(1.0f,1.0f,1.0f,1.0f);
-	glLineWidth(1);
-	//glEnableClientState(GL_TEXTURE_2D);
-	//glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-	//glEnableClientState(GL_COLOR_ARRAY);
-}
-*/
+ -(void)debugDraw {
+ //Depending on scenario, you might need to have different Disable/Enable of Client States
+ //glDisableClientState(GL_TEXTURE_2D);
+ //glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+ //glDisableClientState(GL_COLOR_ARRAY);
+ //set color and line width for ccDrawLine
+ glColor4f(0.0f,0.0f,1.0f,1.0f);
+ glLineWidth(5.0f);
+ for(int i=0;i<numPoints-1;i++) {
+ //"debug" draw
+ VPoint *pointA = [[vSticks objectAtIndex:i] getPointA];
+ VPoint *pointB = [[vSticks objectAtIndex:i] getPointB];
+ ccDrawPoint(ccp(pointA.x,pointA.y));
+ ccDrawPoint(ccp(pointB.x,pointB.y));
+ //ccDrawLine(ccp(pointA.x,pointA.y),ccp(pointB.x,pointB.y));
+ }
+ //restore to white and default thickness
+ glColor4f(1.0f,1.0f,1.0f,1.0f);
+ glLineWidth(1);
+ //glEnableClientState(GL_TEXTURE_2D);
+ //glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+ //glEnableClientState(GL_COLOR_ARRAY);
+ }
+ */
 
 -(void)dealloc {
+#if !__has_feature(objc_arc)
     /*
-	for(int i=0;i<numPoints;i++) {
-		[[vPoints objectAtIndex:i] release];
-		if(i!=numPoints-1)
-			[[vSticks objectAtIndex:i] release];
-	}
-	[vPoints removeAllObjects];
-	[vSticks removeAllObjects];
-    */
+     for(int i=0;i<numPoints;i++) {
+     [[vPoints objectAtIndex:i] release];
+     if(i!=numPoints-1)
+     [[vSticks objectAtIndex:i] release];
+     }
+     [vPoints removeAllObjects];
+     [vSticks removeAllObjects];
+     */
     
     //[self removeSprites];
     [ropeSprites release];
-    
-	[vPoints release];
-	[vSticks release];
-	[super dealloc];
+    [vPoints release];
+    [vSticks release];
+    [super dealloc];
+#endif
 }
+
 
 @end
